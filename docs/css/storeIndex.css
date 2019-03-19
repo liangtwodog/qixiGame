@@ -1,0 +1,540 @@
+html{
+    height: 100%;
+}
+body {
+    background-image: url("../images/bg.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    padding: 0;
+    height: 100%;
+}
+#bodyContent{
+    width: 750px;
+    position: relative;
+    margin: -483px auto 0;
+    top: 50%;
+}
+.titleDiv{
+    width: 627px;
+    height: 515px;
+    margin:auto;
+    background-image: url("../images/store/storeAll.png");
+    background-position: -2275px -1815px;
+    background-repeat: no-repeat;
+    position: relative;
+
+}
+.titleDiv p{
+    position: absolute;
+    top: 395px;
+    color: #fd5a6f;
+    font-size: 50px;
+    text-align: center;
+    width: 100%;
+    font-weight: 600;
+}
+.btnGroup .activitiesIntroductionBtn,.btnGroup .nationalRankingsBtn{
+    background-repeat: no-repeat;
+    width: 422px;
+    height: 80px;
+    margin: 0 auto 40px;
+    background-image: url("../images/store/storeAll.png");
+    cursor: pointer;
+}
+.btnGroup .activitiesIntroductionBtn{
+    background-position: 0 0;
+    margin-top: 60px;
+}
+.btnGroup .nationalRankingsBtn{
+    background-position: 0 -85px;
+}
+.btnGroup .samllBtnGroup{
+    margin: auto;
+    width: 606px;
+}
+.btnGroup .storeManagementBtn,.btnGroup .prizeWriteOffBtn,.btnGroup .extensionBtn{
+    width: 151px;
+    height: 151px;
+    background-repeat: no-repeat;
+    background-image: url("../images/store/storeAll.png");
+    cursor: pointer;
+}
+.btnGroup .storeManagementBtn{
+    background-position: -739px 0;
+}
+.btnGroup .prizeWriteOffBtn{
+    background-position: -583px 0;
+    margin: auto 75px;
+}
+.btnGroup .extensionBtn{
+    background-position: -427px 0;
+}
+.curtain{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    opacity: 0.6;
+}
+.storeReward{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    margin-top: -390px;
+    z-index: 100;
+    display: none;
+}
+
+.storeReward .content{
+    width: 652px;
+    height: 485px;
+    position: relative;
+    background-repeat: no-repeat;
+    background-image: url("../images/store/storeAll.png");
+    background-position: 0 -670px;
+    margin: auto;
+    padding-top: 240px;
+}
+.storeReward .content p{
+    width: 390px;
+    margin: auto;
+    color: #0a71a1;
+    font-size: 25px;
+    line-height: 45px;
+    text-indent: 40px;
+}
+.storeReward .content .okBtn{
+    width: 213px;
+    height: 82px;
+    position: absolute;
+    bottom: 90px;
+    left: 0;
+    margin: auto;
+    right: 0;
+    background-repeat: no-repeat;
+    background-image: url("../images/store/storeAll.png");
+    background-position: -927px -71px;
+    cursor: pointer;
+}
+.storeReward .content .closeBtn{
+    width: 66px;
+    height: 66px;
+    position: absolute;
+    top: 90px;
+    right: 18px;
+    background-repeat: no-repeat;
+    background-image: url("../images/store/storeAll.png");
+    background-position: -927px 0;
+    cursor: pointer;
+}
+.showQRCode{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    display: none;
+    margin: -500px auto 0;
+}
+.showQRCode .content{
+    margin: auto;
+    width: 702px;
+    height: 954px;
+    background-repeat: no-repeat;
+    background-image: url("../images/store/storeAll.png");
+    background-position: -820px -200px;
+    position: relative;
+}
+.showQRCode .content .QRcodeDiv{
+    width: 355px;
+    height: 355px;
+    position: relative;
+    top: 250px;
+    margin:auto;
+    text-align: center;
+    border: 10px solid #564990;
+}
+.showQRCode .content .QRcodeDiv img{
+    width: 320px;
+    height: 320px;
+    border-right:10px solid #fa8291;
+    border-bottom:10px solid #fa8291;
+    padding: 13px;
+}
+.showQRCode .content p{
+    text-align: center;
+    width: 355px;
+    margin: auto;
+    color: #ffffff;
+    display: block;
+    margin-top: 264px;
+    position: relative;
+    font-size: 32px;
+    text-shadow:0 0 0.5em #01acf2,
+    -0 -0 0.5em #01acf2;
+    font-weight: 600;
+}
+.showQRCode .keepBtn{
+    width: 419px;
+    height: 81px;
+    position: absolute;
+    bottom: -60px;
+    left: 0;
+    margin: auto;
+    right: 0;
+    background-repeat: no-repeat;
+    background-image: url("../images/store/storeAll.png");
+    background-position: -1139px 0;
+    cursor: pointer;
+}
+.showQRCode .closeBtn{
+    width: 66px;
+    height: 66px;
+    position: absolute;
+    top: -20px;
+    right: 0px;
+    background-repeat: no-repeat;
+    background-image: url("../images/store/storeAll.png");
+    background-position: -927px 0;
+    cursor: pointer;
+}
+
+.writeOff{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    margin-top: -505px;
+    display: none;
+}
+.writeOff .content{
+    margin: auto;
+    width: 657px;
+    height: 794px;
+    background-repeat: no-repeat;
+    background-image: url("../images/store/storeAll.png");
+    background-position: -1738px 0px;
+    position: relative;
+    padding-top: 220px;
+}
+.writeOff .content .writeOffBtn{
+    width: 74px;
+    height: 71px;
+    background-repeat: no-repeat;
+    background-image: url("../images/store/storeAll.png");
+    background-position: -2445px -500px;
+    margin: 60px auto 0;
+    cursor: pointer;
+}
+.writeOff .writeOffBtnTitle{
+    width: 495px;
+    margin: 80px auto 0;
+    text-align: center;
+    font-size: 30px;
+    color: #0a71a1;
+}
+.writeOff .userList{
+    text-align: center;
+    width: 495px;
+    height: 460px;
+    background-repeat: no-repeat;
+    background-image: url("../images/store/storeAll.png");
+    background-position: -2446px 0px;
+    margin: 30px auto 0;
+}
+.writeOff ul{
+    padding: 0;
+    overflow-y: scroll;
+    width: 470px;
+    margin: auto;
+    height: 360px;
+    color: #0a71a1;
+}
+.writeOff .listHeader{
+    height: 66px;
+    line-height: 80px;
+    font-size: 20px;
+    font-weight: 600;
+    padding-left: 10px;
+}
+.writeOff .userList .name{
+    width: 100px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    padding: 0;
+    margin-left: 20px;
+
+}
+.writeOff .userList .headerImg{
+    width: 75px;
+
+}
+.writeOff .userList .headerImg img{
+    width: 50px;
+}
+.writeOff .userList .type{
+    width: 140px;
+
+}
+.writeOff .userList .time{
+    width: 120px;
+}
+.writeOff li .name{
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+.writeOff li .type{
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    font-size: 20px;
+}
+.writeOff li{
+    line-height: 50px;
+    border-bottom: 2px dashed #b6e8fc;
+    margin-top: 10px;
+}
+.writeOff li .time{
+    line-height: 24px;
+    font-size: 12px;
+
+}
+.writeOff .closeBtn{
+    width: 66px;
+    height: 66px;
+    position: absolute;
+    top:90px;
+    right: 16px;
+    background-repeat: no-repeat;
+    background-image: url("../images/store/storeAll.png");
+    background-position: -927px 0;
+    cursor: pointer;
+}
+.activityDescription{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    display: none;
+    margin-top: -500px;
+
+}
+.activityDescription .content{
+    margin: auto;
+    width: 652px;
+    height: 794px;
+    background-repeat: no-repeat;
+    background-image: url("../images/store/storeAll.png");
+    background-position: 0px -1450px;
+    position: relative;
+    padding-top: 220px;
+}
+.activityDescription .content.activitiesInfo{
+    background-position: 0px -1450px;
+}
+.activityDescription .content.gameDescription{
+    background-position: -752px -1450px;
+}
+.activityDescription .selectBtn{
+    width: 190px;
+    margin-left: 96px;
+}
+.activityDescription .selectBtn a{
+    width: 95px;
+    height: 48px;
+    line-height: 44px;
+    text-align: center;
+    color: #1376a4;
+    font-size: 26px;
+    cursor: pointer;
+}
+.activityDescription .content .closeBtn{
+    width: 66px;
+    height: 66px;
+    position: absolute;
+    top:90px;
+    right: 16px;
+    background-repeat: no-repeat;
+    background-image: url("../images/store/storeAll.png");
+    background-position: -927px 0;
+    cursor: pointer;
+}
+.activityDescription .content .okBtn{
+    width: 213px;
+    height: 82px;
+    position: absolute;
+    bottom: 90px;
+    left: 0;
+    margin: auto;
+    right: 0;
+    background-repeat: no-repeat;
+    background-image: url("../images/store/storeAll.png");
+    background-position: -927px -71px;
+    cursor: pointer;
+}
+
+.nationalRankings{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    margin-top: -505px;
+    display: none;
+}
+.nationalRankings .content{
+    margin: auto;
+    width: 652px;
+    height: 794px;
+    background-repeat: no-repeat;
+    background-image: url("../images/store/storeAll.png");
+    background-position: -1487px -1450px;
+    position: relative;
+    padding-top: 220px;
+}
+.nationalRankings .content .myInfo{
+    color: #0a71a1;
+    font-size: 26px;
+    height: 56px;
+    line-height: 56px;
+    width: 490px;
+    margin: auto;
+    font-weight: 600;
+}
+.nationalRankings .content .myInfo span{
+    color: #fe7283;
+    font-size: 24px;
+}
+.nationalRankings .userList{
+    text-align: center;
+    margin: auto;
+    width: 518px;
+    height: 645px;
+    background-repeat: no-repeat;
+    background-image: url("../images/store/storeAll.png");
+    background-position: -2415px -1089px;
+    padding-top: 14px;
+    color: #0a71a1;
+}
+.nationalRankings .listHeader{
+    height: 60px;
+    line-height: 60px;
+    width: 490px;
+    margin: auto;
+    font-size: 26px;
+    font-weight: 600;
+}
+.nationalRankings .ranking{
+    width: 77px;
+    height: 50px;
+}
+.nationalRankings .Province{
+    width: 90px;
+    height: 50px;
+}
+.nationalRankings .storeName{
+    width: 120px;
+    height: 50px;
+}
+.nationalRankings .headerImg{
+    width: 80px;
+    height: 50px;
+}
+.nationalRankings .forwardingNumber{
+    width: 120px;
+    height: 50px;
+}
+.nationalRankings ul{
+    padding: 0;
+    margin: 10px auto 0;
+    width: 490px;
+    overflow-y: scroll;
+    height: 510px;
+    font-size: 20px;
+}
+.nationalRankings li{
+    text-align: center;
+    line-height: 50px;
+    border-bottom: 2px dashed #b6e8fc;
+    margin-top: 10px;
+    padding-bottom: 10px;
+}
+.nationalRankings li:first-child .ranking{
+    background-repeat: no-repeat;
+    background-image: url("../images/store/storeAll.png");
+    background-position: -1727px -1186px;
+    color: #ffffff;
+}
+.nationalRankings ul li:nth-child(2) .ranking{
+    background-repeat: no-repeat;
+    background-image: url("../images/store/storeAll.png");
+    background-position: -1727px -1236px;
+    color: #ffffff;
+}
+.nationalRankings ul li:nth-child(3) .ranking{
+    background-repeat: no-repeat;
+    background-image: url("../images/store/storeAll.png");
+    background-position: -1727px -1286px;
+    color: #ffffff;
+}
+
+.nationalRankings li .Province,.nationalRankings li .storeName,.nationalRankings li .forwardingNumber{
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+.nationalRankings li .headerImg img{
+    width: 50px;
+}
+.nationalRankings .content .closeBtn{
+    width: 66px;
+    height: 66px;
+    position: absolute;
+    top:90px;
+    right: 16px;
+    background-repeat: no-repeat;
+    background-image: url("../images/store/storeAll.png");
+    background-position: -927px 0;
+    cursor: pointer;
+}
+
+/*//!**!显示图片*/
+.showImg{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    display: none;
+    margin: -500px auto 0;
+}
+.showImg .content{
+    margin: auto;
+    width: 700px;
+    position: relative;
+}
+.showImg .content img{
+    width: 100%;
+    margin: auto;
+}
+.showImg .closeBtn{
+    width: 66px;
+    height: 66px;
+    position: absolute;
+    bottom: -120px;
+    right: 0;
+    left: 0;
+    margin: auto;
+    background-repeat: no-repeat;
+    background-image: url("../images/store/storeAll.png");
+    background-position: -927px 0;
+    cursor: pointer;
+}
+

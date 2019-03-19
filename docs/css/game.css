@@ -1,0 +1,981 @@
+input::-webkit-input-placeholder{
+    color:#1382b5;
+}
+input::-moz-placeholder{   /* Mozilla Firefox 19+ */
+    color:#1382b5;
+}
+input:-moz-placeholder{    /* Mozilla Firefox 4 to 18 */
+    color:#1382b5;
+}
+input:-ms-input-placeholder{  /* Internet Explorer 10-11 */
+    color:#1382b5;
+}
+#loading {
+    position:fixed;
+    width:100%;
+    height:100%;
+    text-align:center;
+    left: 0;
+}
+#loading_container {
+    position:relative;
+    margin:-25px auto 0;
+    width:50%;
+    height:50px;
+    top: 50%;
+    border:1px solid black;
+    text-align:center;
+    line-height: 50px;
+    font-size: 18px;
+}
+
+#loading_progress {
+    width:0%;
+    background-color:#fecfd3;
+    position:absolute;
+    height:50px;
+    top:0px;
+    left:0px;
+    opacity:0.4;
+}
+
+#failTime{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 50;
+    display: none;
+}
+#failTime .beijing{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.5;
+}
+#failTime .content{
+    position: relative;
+    font-size: 18px;
+    color: red;
+    text-align: center;
+    z-index: 50;
+    top: 30%;
+}
+#failTime .content .btn{
+    display: block;
+    background-color: chocolate;
+    color: white;
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 5px;
+    width: 200px;
+    margin: auto;
+}
+#failTime .content a:hover{
+    cursor: pointer;
+}
+/*//  计分器*/
+.scoringDiv{
+    height: 420px;
+    position: fixed;
+    top: 400px;
+    left: 50px;
+    z-index: 40;
+    display: none;
+}
+.scoringDiv .scoringTitle{
+    padding: 0;
+    color: #ea5e77;
+    text-align: center;
+    margin: 0;
+    font-size: 30px;
+    font-weight: 600;
+}
+#scale{
+    margin: auto;
+    height: 350px;
+    width: 75px;
+    background-image: url("../images/game/game.png");
+    background-repeat: no-repeat;
+    background-position: 0 -375px;
+    padding-top: 36px;
+    position: relative;
+}
+#scale .container{
+    margin: auto;
+    width: 26px;
+    height: 297px;
+    background-image: url("../images/game/game.png");
+    background-repeat: no-repeat;
+    background-position: -90px -375px;
+    position: relative;
+}
+#scale .container .value{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 12px;
+    height: 173px;
+    background-image: url("../images/game/value.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+/*// 计分条头像*/
+#scale .highestScore{
+    width: 51px;
+    height: 51px;
+    background-repeat: no-repeat;
+    background-image: url("../images/game/game.png");
+    padding-left: 15px;
+    position: absolute;
+    left:64px;
+ }
+#scale .highestScore1{
+    background-position: -540px 0px;
+    bottom: 75px;
+}
+#scale .highestScore2{
+    background-position: -540px -52px;
+    bottom: 150px;
+}
+#scale .highestScore .herader{
+    position: relative;
+}
+#scale .highestScore .imgDIV{
+    padding-top: 6px;
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    border-radius: 50%
+}
+#scale .highestScore .imgDIV img{
+    width: 100%;
+    height: 100%;
+}
+#scale .highestScore .imgTitle{
+    position: absolute;
+    left: 50px;
+    top:10px;
+    color: #ea5e77;
+    font-size: 14px
+}
+
+#quintus_container{
+    padding: 0;
+    margin: auto;
+    left: 0;
+    right: 0;
+    z-index: 0;
+    background-color: #000000;
+    text-align: center;
+    display: none;
+}
+
+.bodyContentBg{
+    height: 100%;
+    width: 100%;
+    background-image: url("../images/bg.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    z-index: 50;
+}
+#bodyContent{
+    position: fixed;
+    width: 750px;
+    margin: auto;
+    left: 0;
+    right: 0;
+}
+.gameIndex{
+    position: fixed;
+    width: 100%;
+    display: none;
+    top: 50%;
+    margin-top: -550px;
+    left: 0;
+    right: 0;
+
+}
+.gameIndex .logo{
+    width: 91px;
+    height: 51px;
+    background-image: url("../images/game/userAll.png");
+    background-repeat: no-repeat;
+    background-position: 0 -299px;
+    position: absolute;
+    top: 0;
+    left: 7%;
+}
+.gameIndex .titleDiv{
+    width: 747px;
+    height: 605px;
+    background-image: url("../images/game/userAll.png");
+    background-repeat: no-repeat;
+    background-position: 0 -385px;
+    position: relative;
+    margin: auto;
+}
+.gameIndex  .btnGroup{
+    width: 750px;
+    margin: auto;
+}
+.gameIndex .startGameBtn{
+    width: 506px;
+    height: 112px;
+    background-image: url("../images/game/userAll.png");
+    background-repeat: no-repeat;
+    background-position: 0 -174px;
+    margin: 100px auto 0;
+}
+.gameIndex .samllBtnGroup{
+    width: 570px;
+    margin: 40px auto 0;
+}
+.gameIndex .samllBtnGroup .rankingBtn,.samllBtnGroup .myPrizeBtn,.samllBtnGroup .gameDescriptionBtn{
+    background-image: url("../images/game/userAll.png");
+    background-repeat: no-repeat;
+    width: 152px;
+    height: 152px;
+}
+.gameIndex .samllBtnGroup .rankingBtn{
+    background-position: -350px 0;
+}
+.gameIndex .samllBtnGroup .myPrizeBtn{
+    background-position: -173px 0;
+    margin:auto 55px;
+}
+.gameIndex .samllBtnGroup .gameDescriptionBtn{
+    background-position: 0 0;
+}
+.curtain{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    opacity: 0.6;
+}
+.activityDescription{
+    position: fixed;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    display: none;
+}
+.activityDescription .content{
+    margin: -510px auto 0;
+    width: 650px;
+    height: 807px;
+    background-repeat: no-repeat;
+    background-image: url("../images/game/userAll.png");
+    background-position: -920px 0;
+    position: relative;
+    padding-top: 220px;
+    top: 50%;
+}
+.activityDescription .content.gameInfo{
+    background-position: -920px 0px;
+}
+.activityDescription .content.gameDescription{
+    background-position: -1761px -0px;
+}
+.activityDescription .selectBtn{
+    width: 190px;
+    margin-left: 90px;
+}
+.activityDescription .selectBtn a{
+    width: 95px;
+    height: 70px;
+    line-height: 70px;
+    text-align: center;
+    color: #1376a4;
+    font-size: 26px;
+}
+.activityDescription .content .closeBtn{
+    width: 66px;
+    height: 66px;
+    position: absolute;
+    top:100px;
+    right: 20px;
+    background-repeat: no-repeat;
+    background-image: url("../images/game/userAll.png");
+    background-position: -2471px 0;
+}
+.activityDescription .content .okBtn{
+    width: 213px;
+    height: 82px;
+    position: absolute;
+    bottom: 80px;
+    left: 0;
+    margin: auto;
+    right: 0;
+    background-repeat: no-repeat;
+    background-image: url("../images/game/userAll.png");
+    background-position: -2471px -100px;
+}
+.activityEnd{
+    position: fixed;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    display: none;
+}
+.activityEnd .content{
+    margin: -450px auto 0;
+    width: 650px;
+    height: 810px;
+    background-repeat: no-repeat;
+    background-image: url("../images/game/userAll.png");
+    background-position: 0 -1091px;
+    position: relative;
+    top: 50%;
+}
+.activityEnd .content .closeBtn{
+    width: 66px;
+    height: 66px;
+    position: absolute;
+    top:160px;
+    right: 20px;
+    background-repeat: no-repeat;
+    background-image: url("../images/game/userAll.png");
+    background-position: -2471px 0;
+}
+.activityEnd .content .okBtn{
+    width: 213px;
+    height: 82px;
+    position: absolute;
+    bottom: 110px;
+    left: 0;
+    margin: auto;
+    right: 0;
+    background-repeat: no-repeat;
+    background-image: url("../images/game/userAll.png");
+    background-position: -2471px -100px;
+}
+
+.verificationPhone{
+    position: fixed;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    display: none;
+}
+.verificationPhone .content{
+    margin: -450px auto 0;
+    width: 650px;
+    height: 810px;
+    background-repeat: no-repeat;
+    background-image: url("../images/game/userAll.png");
+    background-position: -732px -1090px;
+    position: relative;
+    top: 50%;
+}
+.verificationPhone .content .phoneNb{
+    position: relative;
+    top: 362px;
+    left: 200px;
+    border: none;
+    height: 50px;
+    line-height: 50px;
+    font-size: 28px;
+    width: 340px;
+    outline: none;
+}
+.verificationPhone .content .closeBtn{
+    width: 66px;
+    height: 66px;
+    position: absolute;
+    top:160px;
+    right: 20px;
+    background-repeat: no-repeat;
+    background-image: url("../images/game/userAll.png");
+    background-position: -2471px 0;
+}
+.verificationPhone .content .okBtn{
+    width: 213px;
+    height: 82px;
+    position: absolute;
+    bottom: 110px;
+    left: 0;
+    margin: auto;
+    right: 0;
+    background-repeat: no-repeat;
+    background-image: url("../images/game/userAll.png");
+    background-position: -2471px -100px;
+}
+
+.registeredMember{
+    position: fixed;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    display: none;
+}
+.registeredMember .content{
+    margin: -460px auto 0;
+    width: 650px;
+    height: 823px;
+    background-repeat: no-repeat;
+    background-image: url("../images/game/userAll.png");
+    background-position: -1486px -1090px;
+    position: relative;
+    top: 50%;
+}
+.registeredMember .content .name{
+    position: relative;
+    top: 318px;
+    left: 200px;
+    border: none;
+    height: 50px;
+    line-height: 50px;
+    font-size: 28px;
+    width: 340px;
+    outline: none;
+}
+.registeredMember .content .phoneNb{
+    position: relative;
+    top: 400px;
+    left: 200px;
+    border: none;
+    height: 50px;
+    line-height: 50px;
+    font-size: 28px;
+    width: 340px;
+    outline: none;
+}
+.registeredMember .content .closeBtn{
+    width: 66px;
+    height: 66px;
+    position: absolute;
+    top:150px;
+    right: 20px;
+    background-repeat: no-repeat;
+    background-image: url("../images/game/userAll.png");
+    background-position: -2471px 0;
+}
+.registeredMember .content .okBtn{
+    width: 213px;
+    height: 82px;
+    position: absolute;
+    bottom: 110px;
+    left: 0;
+    margin: auto;
+    right: 0;
+    background-repeat: no-repeat;
+    background-image: url("../images/game/userAll.png");
+    background-position: -2471px -100px;
+}
+
+.myPrize{
+    position: fixed;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    display: none;
+}
+.myPrize .content{
+    margin: -470px auto 0;
+    width: 650px;
+    height: 861px;
+    background-repeat: no-repeat;
+    background-image: url("../images/game/userAll.png");
+    background-position: -2284px -1069px;
+    position: relative;
+    top: 50%;
+}
+.myPrize .content .title{
+    color: #0e74a2;
+    font-size: 28px;
+    text-align: center;
+    top: 264px;
+    height: 40px;
+    position: relative;
+}
+.myPrize .content .title span{
+    color: #fb7e8e;
+}
+.myPrize .content .Prize.Prize1,.myPrize .content .Prize.Prize2,.myPrize .content .Prize.Prize3{
+    width: 440px;
+    height: 146px;
+    background-repeat: no-repeat;
+    background-image: url("../images/game/userAll.png");
+    margin: auto;
+    top: 280px;
+    position: relative;
+}
+.myPrize .content .Prize.Prize1{
+    background-position: -2500px -240px;
+}
+.myPrize .content .Prize.Prize2{
+    background-position: -2500px -450px;
+}
+.myPrize .content .Prize.Prize3{
+    background-position: -2500px -670px;
+}
+.myPrize .content .closeBtn{
+    width: 66px;
+    height: 66px;
+    position: absolute;
+    top:160px;
+    right: 20px;
+    background-repeat: no-repeat;
+    background-image: url("../images/game/userAll.png");
+    background-position: -2471px 0;
+}
+.myPrize .content .okBtn{
+    width: 213px;
+    height: 82px;
+    position: absolute;
+    bottom: 110px;
+    left: 0;
+    margin: auto;
+    right: 0;
+    background-repeat: no-repeat;
+    background-image: url("../images/game/userAll.png");
+    background-position: -2471px -100px;
+}
+
+.prizeQRcode{
+    position: fixed;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    display: none;
+}
+.prizeQRcode .content{
+    margin: -500px auto 0;
+    width: 650px;
+    height: 870px;
+    background-repeat: no-repeat;
+    background-image: url("../images/game/userAll.png");
+    background-position: 0 -1980px;
+    position: relative;
+    top: 50%;
+}
+.prizeQRcode .content .QRcode{
+    position: relative;
+    top: 318px;
+    width: 320px;
+    height: 320px;
+    margin: auto;
+}
+.prizeQRcode .content .QRcode img{
+    width: 100%;
+}
+.prizeQRcode .content .writtenOffIcon{
+    position: relative;
+    top: 70px;
+    width: 278px;
+    height: 185px;
+    margin: auto;
+    background-repeat: no-repeat;
+    background-image: url("../images/game/userAll.png");
+    background-position: -2500px -880px;
+}
+.prizeQRcode .content .closeBtn{
+    width: 66px;
+    height: 66px;
+    position: absolute;
+    top:180px;
+    right: 20px;
+    background-repeat: no-repeat;
+    background-image: url("../images/game/userAll.png");
+    background-position: -2471px 0;
+}
+
+
+.nationalRankings{
+    position: fixed;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    display: none;
+}
+.nationalRankings .content{
+    width: 650px;
+    height: 825px;
+    background-repeat: no-repeat;
+    background-image: url("../images/game/userAll.png");
+    background-position: -740px -1920px;
+    position: relative;
+    margin: -550px auto 0;
+    top: 50%;
+    padding-top: 250px;
+}
+.nationalRankings .content .myInfo{
+    color: #0a71a1;
+    font-size: 26px;
+    height: 45px;
+    line-height: 45px;
+    width: 490px;
+    margin: auto;
+    font-weight: 600;
+}
+.nationalRankings .content .myInfo span{
+    color: #fe7283;
+    font-size: 24px;
+}
+.nationalRankings .userList{
+    text-align: center;
+    margin: auto;
+    width: 518px;
+    height: 645px;
+    padding-top: 14px;
+    color: #0a71a1;
+}
+.nationalRankings .listHeader{
+    height: 60px;
+    line-height: 60px;
+    width: 490px;
+    margin: auto;
+    font-size: 26px;
+    font-weight: 600;
+}
+.nationalRankings .ranking{
+    width: 80px;
+}
+.nationalRankings .name{
+    width: 150px;
+}
+.nationalRankings .headerImg{
+    width: 110px;
+}
+.nationalRankings .Score{
+    width: 150px;
+}
+.nationalRankings ul{
+    padding: 0;
+    margin: 10px auto 0;
+    width: 490px;
+    overflow-y: scroll;
+    height: 540px;
+    font-size: 20px;
+}
+.nationalRankings li{
+    text-align: center;
+    line-height: 50px;
+    border-bottom: 2px dashed #b6e8fc;
+    margin-top: 10px;
+}
+.nationalRankings li:first-child .ranking{
+    background-repeat: no-repeat;
+    background-image: url("../images/game/userAll.png");
+    background-position: -2631px -1953px;
+    color: #ffffff;
+}
+.nationalRankings ul li:nth-child(2) .ranking{
+    background-repeat: no-repeat;
+    background-image: url("../images/game/userAll.png");
+    background-position: -2631px -2003px;
+    color: #ffffff;
+}
+.nationalRankings ul li:nth-child(3) .ranking{
+    background-repeat: no-repeat;
+    background-image: url("../images/game/userAll.png");
+    background-position: -2631px -2053px;
+    color: #ffffff;
+}
+.nationalRankings li .ranking,.nationalRankings li .name,.nationalRankings li .Score{
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+.nationalRankings li .headerImg img{
+    width: 50px;
+}
+.nationalRankings .content .closeBtn{
+    width: 66px;
+    height: 66px;
+    position: absolute;
+    top:135px;
+    right: 20px;
+    background-repeat: no-repeat;
+    background-image: url("../images/game/userAll.png");
+    background-position: -2471px 0;
+}
+.nationalRankings .content .highestScoreBtn{
+    width: 210px;
+    height: 48px;
+    position: absolute;
+    top:272px;
+    right: 75px;
+    background-repeat: no-repeat;
+    background-image: url("../images/game/userAll.png");
+    background-position: -2150px -2010px;
+}
+
+
+.highestScoreDiv{
+    position: fixed;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    display: none;
+}
+.highestScoreDiv .content{
+    width: 650px;
+    height: 758px;
+    background-repeat: no-repeat;
+    background-image: url("../images/game/userAll.png");
+    background-position: -1450px -1942px;
+    position: relative;
+    margin: -550px auto 0;
+    top: 50%;
+    padding-top: 290px;
+}
+.highestScoreDiv .userList{
+    text-align: center;
+    margin: auto;
+    width: 518px;
+    height: 645px;
+    padding-top: 14px;
+    color: #0a71a1;
+}
+.highestScoreDiv .listHeader{
+    height: 60px;
+    line-height: 60px;
+    width: 490px;
+    margin: auto;
+    font-size: 26px;
+    font-weight: 600;
+}
+.highestScoreDiv .time{
+    width: 244px;
+}
+.highestScoreDiv .Score{
+    width: 244px;
+}
+.highestScoreDiv ul{
+    padding: 0;
+    margin: auto;
+    width: 490px;
+    overflow-y: scroll;
+    height: 340px;
+    font-size: 20px;
+}
+.highestScoreDiv li{
+    text-align: center;
+    line-height: 50px;
+    border-bottom: 2px dashed #b6e8fc;
+    margin-bottom: 10px;
+    padding-bottom: 4px;
+}
+.highestScoreDiv li .time,.highestScoreDiv li .Score{
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+.highestScoreDiv .content .closeBtn{
+    width: 66px;
+    height: 66px;
+    position: absolute;
+    top:115px;
+    right: 20px;
+    background-repeat: no-repeat;
+    background-image: url("../images/game/userAll.png");
+    background-position: -2471px 0;
+}
+.highestScoreDiv .content .ReturnBtn{
+    width: 212px;
+    height: 82px;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    bottom: 130px;
+    background-repeat: no-repeat;
+    background-image: url("../images/game/userAll.png");
+    background-position: -2400px -2000px;
+}
+
+/*领取奖品*/
+.winPrize{
+    position: fixed;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    display: none;
+}
+.winPrize .content{
+    margin: -450px auto 0;
+    width: 650px;
+    height: 770px;
+    background-repeat: no-repeat;
+    background-image: url("../images/game/userAll.png");
+    background-position: -750px -3018px;
+    position: relative;
+    top: 50%;
+}
+.winPrize .content .PrizeContent{
+    position: relative;
+    top: 250px;
+    width: 430px;
+    height: 250px;
+    color: #0a71a1;
+    font-size: 26px;
+    margin: auto;
+    text-indent: 2em;
+    line-height: 58px;
+}
+.winPrize .content .closeBtn{
+    width: 66px;
+    height: 66px;
+    position: absolute;
+    top:130px;
+    right: 20px;
+    background-repeat: no-repeat;
+    background-image: url("../images/game/userAll.png");
+    background-position: -2471px 0;
+}
+.winPrize .content .immediatelyReceiveBtn{
+    width: 297px;
+    height: 81px;
+    position: absolute;
+    bottom: 110px;
+    left: 0;
+    margin: auto;
+    right: 0;
+    background-repeat: no-repeat;
+    background-image: url("../images/game/userAll.png");
+    background-position: -2190px -3300px;
+}
+
+/*游戏结束*/
+.gameOver{
+    position: fixed;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    display: none;
+}
+.gameOver .content{
+    margin: -480px auto 0;
+    width: 650px;
+    height: 832px;
+    background-repeat: no-repeat;
+    background-image: url("../images/game/userAll.png");
+    background-position: 0 -2925px;
+    position: relative;
+    top: 50%;
+}
+.gameOver .content .myScor{
+    position: relative;
+    top: 420px;
+    color: #fb7a8a;
+    font-size: 70px;
+    margin: auto;
+    text-align: center;
+    font-weight: 600;
+}
+.gameOver .content .closeBtn{
+    width: 66px;
+    height: 66px;
+    position: absolute;
+    top:170px;
+    right: 20px;
+    background-repeat: no-repeat;
+    background-image: url("../images/game/userAll.png");
+    background-position: -2471px 0;
+}
+.gameOver .content .gameOverSelect{
+    width: 491px;
+    margin: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 116px;
+
+}
+.gameOver .content .invitingFriendsBtn{
+    width: 228px;
+    height: 90px;
+    margin: auto;
+    background-repeat: no-repeat;
+    background-image: url("../images/game/userAll.png");
+    background-position: -2190px -3420px;
+}
+.gameOver .content .onceMoreBtn{
+    width: 228px;
+    height: 90px;
+    margin-right: 35px;
+    background-repeat: no-repeat;
+    background-image: url("../images/game/userAll.png");
+    background-position: -2190px -3540px;
+}
+
+/*分享游戏*/
+.showGame{
+    position: fixed;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    display: none;
+}
+.showGame .content{
+    margin: -600px auto 0;
+    width: 695px;
+    height: 1017px;
+    background-repeat: no-repeat;
+    background-image: url("../images/game/userAll.png");
+    background-position: -2160px -2220px;
+    position: relative;
+    top: 50%;
+}
+.showGame .content .IKnowBtn{
+    width: 125px;
+    height: 44px;
+    position: absolute;
+    top:508px;
+    right: 180px;
+    background-repeat: no-repeat;
+    background-image: url("../images/game/userAll.png");
+    background-position: -2190px -3660px;
+}
+.gameAssembly{
+    z-index: 100;
+}
+.waitDiv{
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+.waitDiv .content{
+    width: 200px;
+    text-align: center;
+    margin: -65px auto 0;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+}
+.waitDiv .content img{
+    width: 64px;
+}
+.waitDiv .content p{
+    color: #ffffff;
+    margin-top: 10px;
+}
+
+
+

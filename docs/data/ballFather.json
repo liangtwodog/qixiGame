@@ -1,0 +1,10 @@
+{
+  "ballFather":{
+    "sx": 0,
+    "sy": 0,
+    "cols": 10,
+    "frames": 10,
+    "tilew": 213,
+    "tileh": 288
+  }
+}

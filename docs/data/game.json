@@ -1,0 +1,18 @@
+{
+  "fruitBall":{
+    "sx":0,
+    "sy":0,
+    "cols":6,
+    "tilew":90,
+    "tileh":90,
+    "frames":6
+  },
+  "cloud":{
+    "sx":0,
+    "sy":100,
+    "cols":1,
+    "tilew":888,
+    "tileh":262,
+    "frames":1
+  }
+}

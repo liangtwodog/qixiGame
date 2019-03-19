@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2018果本七夕活动</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <script src='./js/jquery-1.11.3.min.js'></script>
+    <script src='https://res.fibodata.com/data/fibosdk.min.js'></script>
+    <script src='//res.wx.qq.com/open/js/jweixin-1.2.0.js'></script>
+    <script src='./js/moment.js'></script>
+    <script src='./api/apiConfig.js'></script>
+    <script src='./js/common.js?v=1.0'></script>
+    <script src='./js/quintusAll.js'></script>
+    <script src='api/indexApi.js?v=1.0'></script>
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/game.css?v=1.0">
+</head>
+<body style="padding: 0;margin: 0;overflow: hidden;background-color: #ea5e77" >
+<div class="bodyContentBg">
+    <div id="bodyContent">
+        <div id='loading'>
+            <div id='loading_container'>
+                Loading...
+                <div id='loading_progress'></div>
+            </div>
+        </div>
+        <div class="gameIndex">
+            <div class="logo"></div>
+            <div class="titleDiv"></div>
+            <div class="btnGroup">
+                <a class="btn startGameBtn"></a>
+                <div class="clearfloat samllBtnGroup">
+                    <a class="lfloat rankingBtn"></a>
+                    <a class="lfloat myPrizeBtn"></a>
+                    <a class="lfloat gameDescriptionBtn"></a>
+                </div>
+            </div>
+        </div>
+        <div class="activityDescription">
+            <div class="curtain"></div>
+            <div class="content gameDescription" data-type="1">
+                <div class="selectBtn clearfloat">
+                    <a class="lfloat" data-type="1">玩法</a>
+                    <a class="lfloat" data-type="0">奖品</a>
+                </div>
+                <a class="closeBtn"></a>
+                <a class="okBtn"></a>
+            </div>
+        </div>
+        <div class="activityEnd">
+            <div class="curtain"></div>
+            <div class="content">
+                <a class="closeBtn"></a>
+                <a class="okBtn"></a>
+            </div>
+        </div>
+        <div class="verificationPhone">
+            <div class="curtain"></div>
+            <div class="content">
+                <input class="phoneNb inputShow" placeholder="请输入您的手机号码" id="phoneNbShow">
+                <a class="closeBtn"></a>
+                <a class="okBtn"></a>
+            </div>
+        </div>
+        <div class="registeredMember">
+            <div class="curtain"></div>
+            <div class="content">
+                <input class="name inputShow" placeholder="请输入您的姓名" id="nameShow">
+                <input class="phoneNb inputShow" placeholder="请输入您的手机">
+                <a class="closeBtn"></a>
+                <a class="okBtn"></a>
+            </div>
+        </div>
+        <div class="myPrize">
+            <div class="curtain"></div>
+            <div class="content">
+                <p class="title"></p>
+                <div class="Prize"></div>
+                <a class="closeBtn"></a>
+                <a class="okBtn"></a>
+            </div>
+        </div>
+        <div class="prizeQRcode">
+            <div class="curtain"></div>
+            <div class="content">
+                <div class="QRcode">
+                    <img src="images/store/erweima.jpg">
+                </div>
+                <div class="writtenOffIcon"></div>
+                <a class="closeBtn"></a>
+            </div>
+        </div>
+        <div class="nationalRankings">
+            <div class="curtain"></div>
+            <div class="content">
+                <div class="myInfo">当前排名：<span class="curRand">0</span></div>
+                <div class="myInfo">累计分数：<span class="curScoreHigh">0</span></div>
+                <div class="userList">
+                    <div class="listHeader clearfloat">
+                        <div class="lfloat ranking">名次</div>
+                        <div class="lfloat name">昵称</div>
+                        <div class="lfloat headerImg">头像</div>
+                        <div class="lfloat Score">分数</div>
+                    </div>
+                    <ul>
+                    </ul>
+                </div>
+                <a class="highestScoreBtn"></a>
+                <a class="closeBtn"></a>
+            </div>
+        </div>
+        <div class="highestScoreDiv">
+            <div class="curtain"></div>
+            <div class="content">
+                <div class="userList">
+                    <div class="listHeader clearfloat">
+                        <div class="lfloat time">日期</div>
+                        <div class="lfloat Score">最高分</div>
+                    </div>
+                    <ul>
+
+                    </ul>
+                </div>
+                <a class="ReturnBtn"></a>
+                <a class="closeBtn"></a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="scoringDiv" id="scoringDiv">
+    <p class="scoringTitle">0</p>
+    <div id="scale">
+        <div class="container">
+            <div class="value"></div>
+        </div>
+        <div class="highestScore1 highestScore">
+            <div class="herader">
+                <div class="imgDIV">
+                    <img style="width: 100%" src="images/game/header.jpg">
+                </div>
+                <span class="imgTitle">100</span>
+            </div>
+        </div>
+        <div class="highestScore2 highestScore">
+            <div class="herader">
+                <div class="imgDIV" style="">
+                    <img style="width: 100%" src="images/game/header.jpg">
+                </div>
+                <span class="imgTitle">100</span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="gameAssembly">
+    <div class="winPrize">
+        <div class="curtain"></div>
+        <div class="content">
+            <div class="PrizeContent">
+                <!--恭喜你获得果本新品果实精华油面膜一片与面膜预售券一张！点击下方“立即领取”即可领取奖品-->
+                <!--恭喜你获得果本新品果实精华油面膜一片+5.20现金红包+面膜预售券一张!点击下方“立即领取”即可领取奖品-->
+                <!--恭喜你获得果本新品果实精华油面膜一片+2.60现金红包+面膜预售券一张!点击下方“立即领取”即可领取奖品-->
+            </div>
+            <a class="immediatelyReceiveBtn"></a>
+            <a class="closeBtn"></a>
+        </div>
+    </div>
+    <div class="gameOver">
+        <div class="curtain"></div>
+        <div class="content">
+            <div class="myScor">0</div>
+            <div class="gameOverSelect clearfloat">
+                <a class="onceMoreBtn lfloat"></a>
+                <a class="invitingFriendsBtn lfloat"></a>
+            </div>
+            <a class="closeBtn"></a>
+        </div>
+    </div>
+    <div class="showGame">
+        <div class="curtain"></div>
+        <div class="content">
+            <a class="IKnowBtn"></a>
+        </div>
+    </div>
+</div>
+<div class="horizontalScreenHint">
+    <div class="horizontalScreenHintDiv">
+        <img src="images/hengPing.png">
+        <p>为了更好的体验,为了开发的幸福,为了世界的和平,请各位大帅哥小姐姐锁定竖屏观看及操作本页面</p>
+    </div>
+</div>
+<div class="waitDiv">
+    <div class="curtain"></div>
+    <div class="content">
+        <img src="images/loading.gif">
+        <p>游戏火热进行中，请耐心等待，正在拼命上传数据...</p>
+    </div>
+</div>
+</body>
+
+<script>
+    var GameCanvasHeight = $(window).height();
+    var GameCanvasWidth = $(window).width();
+    var gameScale = GameCanvasWidth / 715;
+    if(GameCanvasWidth/GameCanvasHeight > 750/1200){
+        gameScale = GameCanvasHeight / 1200;
+        $(".gameAssembly").css({
+            "zoom": $(window).height()/1200*100 +  "%"
+        });
+        $("#scoringDiv").css({
+            "zoom": $(window).height()/1200*100 +  "%",
+            "left": GameCanvasWidth/2 - 300*gameScale + "px"
+        });
+    }else {
+        gameScale = GameCanvasWidth / 715;
+        $(".gameAssembly").css({
+            "zoom": $(window).width()/750*100 +  "%",
+        });
+        $("#scoringDiv").css({
+            "zoom": $(window).width()/750*100 +  "%",
+        });
+    }
+    // 游戏时间
+    var gameTime = 0;
+    // 水果下落速度
+    var BallSpeed = 0.1;
+    // 精灵类型
+    var BallType = 1;
+    var landType = 2;
+    var PlayerType = 3;
+    // 水果的位置
+    var ballPosition = [140,260,380,500,620];
+    //游戏定时器
+    var levelInterval = '';
+    //游戏计时器的速度
+    var levelIntervalSpeed = 1000;
+    //游戏开始时间
+    var gameStartTime = moment();
+    // 计分牌的对象
+    var score = {
+        "nowTotalscore": 100,
+        "nowScore": 0,
+        "highestScore1": 50,
+        "highestScore2": 40,
+    };
+    var Q = Quintus().include("Sprites, Scenes, 2D, Audio, Touch, Anim");
+    // var Q = Quintus({ development: true }).include("Sprites, Scenes, 2D, Audio, Touch, Anim");
+    Q.enableSound();
+    // Q.setup("GameCanvas").touch(Q.SPRITE_ALL);
+    Q.setup({width:   GameCanvasWidth, height:  GameCanvasHeight,scaleToFit: true}).touch(Q.SPRITE_ALL);
+    if(GameCanvasWidth/GameCanvasHeight > 750/1200){
+        $("#quintus_container").css({
+            "width": $(window).width()
+        });
+        ballPosition = [GameCanvasWidth/2 - 210*gameScale,GameCanvasWidth/2 - 90*gameScale,GameCanvasWidth/2 + 30*gameScale,GameCanvasWidth/2 + 150*gameScale,GameCanvasWidth/2 + 270*gameScale]
+    }
+    var bgHeight = (GameCanvasHeight - 1326 * gameScale) / 2 + 1326 * gameScale
+    Q.Sprite.extend("player",{
+        init:function(p) {
+            this._super(p,{
+                sprite: "player",
+                sheet: "player",
+                frame: 0,
+                scale:gameScale,
+                x: GameCanvasWidth/2,
+                y: (GameCanvasHeight-300)*gameScale,
+                type:PlayerType,
+                collisionMask:landType,
+                z: 30,
+                gravity: 1,
+
+            });
+            this.add("2d, animation");
+            this.on("drag");
+            this.on("bump.top",function(collision) {
+                if(collision.obj.isA("Ball")) {
+                    if (collision.obj.p.BallType === 0) {
+                        if( this.p.x - collision.obj.p.x > -17*gameScale && this.p.x - collision.obj.p.x< 135*gameScale ){
+                            gameTime = moment().unix() - gameStartTime.unix();
+                            clearInterval(levelInterval);
+                            Q.stage().pause();
+                            Q.audio.play('gameOver.mp3');
+                            bgmSound.stop();
+                            //提交分数查询奖品
+                            indexApi.scoreSubmit({"scores" : score.nowScore});
+                        }
+                    } else {
+                        if(this.p.x - collision.obj.p.x> -17*gameScale && this.p.x - collision.obj.p.x< 135*gameScale ){
+                            this.play("Beautify");
+                            Q.audio.play('goal.mp3');
+                            setNowScore()
+                        }
+
+                    }
+                }
+                collision.obj.destroy();
+            });
+        },
+        drag: function(touch) {
+            if(GameCanvasWidth/GameCanvasHeight > 750/1200){
+                if(touch.x>ballPosition[0] && touch.x<ballPosition[4]+75*gameScale){
+                    this.p.x = touch.x
+                }
+            }else {
+                if(touch.x>75 && touch.x<GameCanvasWidth-20){
+                    this.p.x = touch.x
+                }
+            }
+
+        },
+
+    });
+    Q.Sprite.extend("BallFather",{
+        init:function(p) {
+            if(Q("BallFather") !== undefined){
+                Q("BallFather").destroy();
+            }
+            this._super(p,{
+                sprite: "ballFather",
+                sheet:"ballFather",
+                frame: 0,
+                scale:gameScale,
+                x:194 * gameScale + GameCanvasWidth/2,
+                y:GameCanvasHeight/2 - 380* gameScale ,
+                z: 20,
+            });
+            this.add("animation");
+            this.on("DropFruit");
+        },
+        DropFruit: function(){
+            gameTime = moment().unix() - gameStartTime.unix();
+            BallSpeed = parseInt(gameTime/5)*0.2 + 0.2;
+            if(gameTime > 30){
+                setBallType(3,BallSpeed)
+            }else if(gameTime > 5){
+                setBallType(2,BallSpeed)
+            }else {
+                setBallType(1,BallSpeed)
+            }
+        }
+    });
+    Q.Sprite.extend("Ball",{
+        init:function(p) {
+            this._super(p,{
+                sheet:"fruitBall",
+                frame: 5,
+                scale:gameScale,
+                y: 300*gameScale,
+                gravity: 1,
+                BallType: 0,
+                z:20,
+                type:BallType,
+                collisionMask:landType,
+            });
+            this.add("2d");
+            this.on("bump.bottom",function(collision) {
+                if(collision.obj.isA("land")){
+                    this.destroy();
+                }
+            });
+        },
+    });
+    Q.Sprite.extend("land",{
+        init:function(p) {
+            this._super(p,{
+                color: "#8dd04e",
+                w: GameCanvasWidth,
+                h: 10,
+                x: GameCanvasWidth/2,
+                y: GameCanvasHeight > bgHeight ? bgHeight : GameCanvasHeight,
+                type:landType,
+                collisionMask:BallType,
+                z: 20,
+            });
+        },
+        draw: function(ctx) {
+            ctx.fillStyle = this.p.color;
+            ctx.fillRect(-this.p.cx, -this.p.cy, this.p.w, this.p.h);
+
+        }
+    });
+    Q.Sprite.extend("beijing",{
+        init:function(p) {
+            this._super(p,{
+                asset: "beijing.png",
+                scale:gameScale,
+                x: GameCanvasWidth/2,
+                y: GameCanvasHeight/2,
+                z:10,
+                gravity: 0
+            });
+        },
+    });
+    Q.Sprite.extend("cloud",{
+        init:function(p) {
+            if(Q("cloud") !== undefined){
+                Q("cloud").destroy();
+            }
+            this._super(p,{
+                sheet:"cloud",
+                frame: 0,
+                scale:gameScale,
+                x:GameCanvasWidth/2,
+                // y: (GameCanvasHeight - 1150*gameScale)/2 + 580,
+                y: GameCanvasHeight > bgHeight ? bgHeight - 20 : GameCanvasHeight - 20,
+                z: 30,
+            });
+        },
+    });
+    Q.scene("level",function(stage) {
+        stage.insert(new Q.player());
+        stage.insert(new Q.beijing());
+        // stage.insert(new Q.cloud());
+        stage.insert(new Q.land());
+        var levelBallFather =  stage.insert(new Q.BallFather());
+        gameStartTime = moment();
+        levelInterval = setInterval(function () {
+            levelBallFather.play("Drop_fruit");
+        },100);
+    });
+    Q.load(["gameOver.mp3", "goal.mp3", "bgm.mp3","./game/player.png", "player.json","./game/ballFather.png","ballFather.json", "beijing.png", './game/game.png','game.json', './game/userAll.png'],function() {
+        $("#quintus_container").hide();
+        $("#scoringDiv").hide();
+        $(".gameIndex").show();
+        Q.compileSheets("./game/ballFather.png","ballFather.json");
+        Q.compileSheets("./game/player.png","player.json");
+        Q.compileSheets("./game/game.png","game.json");
+        Q.animations('ballFather', {
+            Drop_fruit: { frames: [0,1,2,3,4,5,6,7,8,9], rate: 1/10,loop: false, trigger:"DropFruit"}
+        });
+        Q.animations('player', {
+            Beautify: { frames: [0,1,2,3,4,5,0], rate: 1/15, loop: false}
+        });
+
+    }, {
+        progressCallback: function (loaded, total) {
+            $("#loading_progress").width(Math.floor(loaded / total * 100) + "%");
+            if(loaded === 11){
+                $("#loading").hide()
+            }
+        }
+    });
+
+    // 开始游戏
+    $(".gameIndex .startGameBtn").on("click",function () {
+        if(moment().unix() < moment("2024-08-17 18:00").unix()){
+            indexApi.getShareAndPlayScoreInfo();
+            clickSound.play();
+            Q.audio.play('goal.mp3');
+            bgmSound.play();
+            fiboSDK.btnClick('qixiGame_uesrBtn11', '用户开始游戏');
+        }else {
+            $(".activityEnd").show()
+        }
+
+    });
+
+    // 设置初始值
+    function scoreSet() {
+        $("#scale .highestScore1 .imgTitle").html(score.highestScore1);
+        $("#scale .highestScore2 .imgTitle").html(score.highestScore2);
+        if( parseInt(score.highestScore1) > parseInt(score.highestScore2)){
+            $("#scale .highestScore1").css({
+                bottom:score.highestScore1/score.nowTotalscore*297 + 102 + "px"
+            });
+            $("#scale .highestScore2").css({
+                bottom:score.highestScore2/score.nowTotalscore*297 + 32 + "px"
+            })
+        }else {
+            $("#scale .highestScore1").css({
+                bottom:score.highestScore1/score.nowTotalscore*297 + 32+ "px"
+            })
+            $("#scale .highestScore2").css({
+                bottom:score.highestScore2/score.nowTotalscore*297+ 102 + "px"
+            })
+        }
+        $("#scale .value").css({
+            height:score.nowScore/score.nowTotalscore*297+ "px"
+        })
+        $("#scoringDiv .scoringTitle").html(score.nowScore)
+        if(score.nowScore / score.nowTotalscore > 0.9){
+            score.nowTotalscore = score.nowTotalscore/2*3
+        }
+    }
+    // 设置当前分数
+    function setNowScore() {
+        score.nowScore += 5;
+        scoreSet()
+    }
+    
+    function setBallType(type, BallSpeed) {
+        var ballIndex = Math.floor(Math.random()*5);
+        switch (parseInt(type)){
+            case 1:
+                //只掉落果实
+                if(GameCanvasWidth/GameCanvasHeight > 750/1200){
+                    Q.stage().insert(new Q.Ball({ frame: ballIndex , x: ballPosition[ballIndex], gravity: BallSpeed, BallType:1}));
+                }else {
+                    Q.stage().insert(new Q.Ball({ frame: ballIndex , x: ballPosition[ballIndex]*gameScale, gravity: BallSpeed, BallType:1}));
+                }
+                break;
+            case 2:
+                //掉落果实多一点，毛毛虫少一点
+                if(Math.floor(Math.random()*10) > 1){
+                    if(GameCanvasWidth/GameCanvasHeight > 750/1200){
+                        Q.stage().insert(new Q.Ball({ frame: ballIndex , x: ballPosition[ballIndex], gravity: BallSpeed, BallType:1}));
+                    }else {
+                        Q.stage().insert(new Q.Ball({ frame: ballIndex , x: ballPosition[ballIndex]*gameScale, gravity: BallSpeed, BallType:1}));
+                    }
+                }else {
+                    if(GameCanvasWidth/GameCanvasHeight > 750/1200){
+                        Q.stage().insert(new Q.Ball({  x: ballPosition[ballIndex], gravity: BallSpeed}));
+                    }else {
+                        Q.stage().insert(new Q.Ball({  x: ballPosition[ballIndex]*gameScale, gravity: BallSpeed}));
+                    }
+                }
+                break;
+            case 3:
+                //正常掉落果实，毛毛虫
+                if(Math.floor(Math.random()*10) > 2){
+                    if(GameCanvasWidth/GameCanvasHeight > 750/1200){
+                        Q.stage().insert(new Q.Ball({ frame: ballIndex , x: ballPosition[ballIndex], gravity: BallSpeed, BallType:1}));
+                    }else {
+                        Q.stage().insert(new Q.Ball({ frame: ballIndex , x: ballPosition[ballIndex]*gameScale, gravity: BallSpeed, BallType:1}));
+                    }
+                }else {
+                    if(GameCanvasWidth/GameCanvasHeight > 750/1200){
+                        Q.stage().insert(new Q.Ball({  x: ballPosition[ballIndex], gravity: BallSpeed}));
+                    }else {
+                        Q.stage().insert(new Q.Ball({  x: ballPosition[ballIndex]*gameScale, gravity: BallSpeed}));
+                    }
+                }
+                break;
+        }
+    }
+</script>
+<script src='./js/index.js?v=1.1'></script>
+</html>
